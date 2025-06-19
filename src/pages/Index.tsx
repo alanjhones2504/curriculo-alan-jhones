@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, Code, Database, Globe, Smartphone, Palette, Server } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink, Code, Database, Globe, Smartphone, Server } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -14,9 +13,7 @@ const Index = () => {
     { name: "JavaScript", icon: Code, color: "bg-yellow-500", level: "Avançado" },
     { name: "Node.js", icon: Server, color: "bg-green-600", level: "Intermediário" },
     { name: "HTML/CSS", icon: Globe, color: "bg-orange-500", level: "Avançado" },
-    { name: "Tailwind CSS", icon: Palette, color: "bg-cyan-500", level: "Avançado" },
     { name: "MySQL", icon: Database, color: "bg-blue-700", level: "Intermediário" },
-    { name: "MongoDB", icon: Database, color: "bg-green-700", level: "Básico" },
     { name: "React Native", icon: Smartphone, color: "bg-purple-600", level: "Básico" },
   ];
 
@@ -65,7 +62,7 @@ const Index = () => {
               <img
                 src="/lovable-uploads/e5b62c96-6188-40e6-a68d-4feace627455.png"
                 alt="Alan Jhones"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
             <div className="text-center md:text-left flex-1">
