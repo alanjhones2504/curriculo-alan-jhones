@@ -61,36 +61,44 @@ const Index = () => {
       <header className="bg-white shadow-lg border-b border-gray-100">
         <div className="container mx-auto px-6 py-8">
           <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-lg">
-              JD
+            <div className="w-32 h-32 rounded-full overflow-hidden shadow-lg border-4 border-white">
+              <img
+                src="/lovable-uploads/e5b62c96-6188-40e6-a68d-4feace627455.png"
+                alt="Alan Jhones"
+                className="w-full h-full object-cover"
+              />
             </div>
             <div className="text-center md:text-left flex-1">
               <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
-                João Desenvolvedor
+                Alan Jhones
               </h1>
               <p className="text-xl text-gray-600 mb-4">Desenvolvedor Full Stack</p>
               <div className="flex flex-wrap justify-center md:justify-start gap-4 text-gray-600">
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  <span>joao@email.com</span>
+                  <span>ajpb2504@gmail.com</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4" />
-                  <span>(11) 99999-9999</span>
+                  <span>(85) 99750-9578</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4" />
-                  <span>São Paulo, SP</span>
+                  <span>Fortaleza, CE</span>
                 </div>
               </div>
               <div className="flex justify-center md:justify-start gap-4 mt-4">
-                <Button variant="outline" size="sm" className="flex items-center gap-2">
-                  <Github className="w-4 h-4" />
-                  GitHub
+                <Button variant="outline" size="sm" className="flex items-center gap-2" asChild>
+                  <a href="https://github.com/alanjhones2504" target="_blank" rel="noopener noreferrer">
+                    <Github className="w-4 h-4" />
+                    GitHub
+                  </a>
                 </Button>
-                <Button variant="outline" size="sm" className="flex items-center gap-2">
-                  <Linkedin className="w-4 h-4" />
-                  LinkedIn
+                <Button variant="outline" size="sm" className="flex items-center gap-2" asChild>
+                  <a href="https://linkedin.com/in/alan-barros" target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="w-4 h-4" />
+                    LinkedIn
+                  </a>
                 </Button>
               </div>
             </div>
@@ -223,13 +231,17 @@ const Index = () => {
             </CardHeader>
             <CardContent className="text-center">
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button variant="secondary" size="lg" className="flex items-center gap-2">
-                  <Mail className="w-5 h-5" />
-                  Enviar Email
+                <Button variant="secondary" size="lg" className="flex items-center gap-2" asChild>
+                  <a href="mailto:ajpb2504@gmail.com">
+                    <Mail className="w-5 h-5" />
+                    Enviar Email
+                  </a>
                 </Button>
-                <Button variant="outline" size="lg" className="flex items-center gap-2 bg-transparent border-white text-white hover:bg-white hover:text-blue-600">
-                  <Phone className="w-5 h-5" />
-                  Ligar Agora
+                <Button variant="outline" size="lg" className="flex items-center gap-2 bg-transparent border-white text-white hover:bg-white hover:text-blue-600" asChild>
+                  <a href="tel:+5585997509578">
+                    <Phone className="w-5 h-5" />
+                    Ligar Agora
+                  </a>
                 </Button>
               </div>
             </CardContent>
@@ -241,7 +253,7 @@ const Index = () => {
       <footer className="bg-gray-900 text-white py-8 mt-16">
         <div className="container mx-auto px-6 text-center">
           <p className="text-gray-400">
-            © 2024 João Desenvolvedor. Todos os direitos reservados.
+            © 2024 Alan Jhones. Todos os direitos reservados.
           </p>
         </div>
       </footer>
