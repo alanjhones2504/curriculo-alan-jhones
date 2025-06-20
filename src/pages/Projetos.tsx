@@ -1,10 +1,10 @@
-
 import { useState } from "react";
 import { ExternalLink, Code, Globe } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const Projetos = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -140,6 +140,8 @@ const Projetos = () => {
           ))}
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };

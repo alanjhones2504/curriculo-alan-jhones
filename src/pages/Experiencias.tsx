@@ -1,8 +1,8 @@
-
 import { Briefcase } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const Experiencias = () => {
   const experiences = [
@@ -69,6 +69,8 @@ const Experiencias = () => {
           ))}
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };

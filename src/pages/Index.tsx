@@ -3,6 +3,7 @@ import { Github, Linkedin, Mail, Phone, MapPin, Code, Database, Globe, Smartphon
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   const technologies = [
@@ -27,7 +28,7 @@ const Index = () => {
               <img
                 src="/lovable-uploads/e5b62c96-6188-40e6-a68d-4feace627455.png"
                 alt="Alan Jhones"
-                className="w-full h-full object-cover object-top transform scale-110 translate-y-2"
+                className="w-full h-full object-cover object-center transform scale-125"
               />
             </div>
             <div className="absolute -top-4 -right-4 w-6 h-6 bg-green-500 rounded-full border-2 border-white animate-pulse"></div>
@@ -165,6 +166,8 @@ const Index = () => {
           </Card>
         </section>
       </div>
+      
+      <Footer />
     </div>
   );
 };
