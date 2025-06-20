@@ -28,7 +28,7 @@ const Index = () => {
               <img
                 src="/lovable-uploads/e5b62c96-6188-40e6-a68d-4feace627455.png"
                 alt="Alan Jhones"
-                className="w-full h-full object-cover object-center transform scale-125"
+                className="w-full h-full object-cover object-top"
               />
             </div>
             <div className="absolute -top-4 -right-4 w-6 h-6 bg-green-500 rounded-full border-2 border-white animate-pulse"></div>
