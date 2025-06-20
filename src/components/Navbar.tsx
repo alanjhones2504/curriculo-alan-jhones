@@ -1,6 +1,6 @@
 
 import { Link, useLocation } from "react-router-dom";
-import { Home, Briefcase, FolderOpen, Mail, Github, Linkedin, Phone } from "lucide-react";
+import { Home, Briefcase, FolderOpen } from "lucide-react";
 import {
   Menubar,
   MenubarContent,
@@ -46,30 +46,14 @@ const Navbar = () => {
                 <EllipsisVertical className="w-5 h-5" />
               </MenubarTrigger>
               <MenubarContent>
-                <MenubarItem asChild>
-                  <a href="mailto:ajpb2504@gmail.com" className="flex items-center gap-2">
-                    <Mail className="w-4 h-4" />
-                    Email
-                  </a>
-                </MenubarItem>
-                <MenubarItem asChild>
-                  <a href="tel:85997509578" className="flex items-center gap-2">
-                    <Phone className="w-4 h-4" />
-                    Telefone
-                  </a>
-                </MenubarItem>
-                <MenubarItem asChild>
-                  <a href="https://github.com/alanjhones2504" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                    <Github className="w-4 h-4" />
-                    GitHub
-                  </a>
-                </MenubarItem>
-                <MenubarItem asChild>
-                  <a href="https://linkedin.com/in/alan-barros" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
-                    <Linkedin className="w-4 h-4" />
-                    LinkedIn
-                  </a>
-                </MenubarItem>
+                {navItems.map((item) => (
+                  <MenubarItem key={item.path} asChild>
+                    <Link to={item.path} className="flex items-center gap-2">
+                      <item.icon className="w-4 h-4" />
+                      {item.label}
+                    </Link>
+                  </MenubarItem>
+                ))}
               </MenubarContent>
             </MenubarMenu>
           </Menubar>
