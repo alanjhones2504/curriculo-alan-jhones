@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Briefcase } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -5,22 +6,32 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const Experiencias = () => {
-  const experiences = [
+  const [experiences, setExperiences] = useState([
     {
-      company: "Nome da Empresa",
-      position: "Cargo/Função",
-      period: "Mês/Ano - Mês/Ano",
-      description: "Descrição das principais atividades e responsabilidades desenvolvidas no cargo.",
-      technologies: ["React", "Node.js", "JavaScript"]
-    },
-    {
-      company: "Outra Empresa",
-      position: "Cargo Anterior",
-      period: "Mês/Ano - Mês/Ano",
-      description: "Principais conquistas e projetos realizados nesta posição.",
-      technologies: ["TypeScript", "MySQL"]
+      company: "",
+      position: "",
+      period: "",
+      description: "",
+      technologies: ""
     }
-  ];
+  ]);
+
+  const handleChange = (index: number, field: string, value: string) => {
+    const newExperiences = [...experiences];
+    (newExperiences[index] as any)[field] = value;
+    setExperiences(newExperiences);
+  };
+
+  const addExperience = () => {
+    setExperiences([
+      ...experiences,
+      { company: "", position: "", period: "", description: "", technologies: "" }
+    ]);
+  };
+
+  const removeExperience = (index: number) => {
+    setExperiences(experiences.filter((_, i) => i !== index));
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
@@ -47,26 +58,69 @@ const Experiencias = () => {
                     </div>
                     <div className="flex-1">
                       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                        <h3 className="text-xl font-bold text-gray-900">{experience.company}</h3>
-                        <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200 w-fit">
-                          {experience.period}
-                        </Badge>
+                        <input
+                          className="text-xl font-bold text-gray-900 bg-transparent border-b border-gray-300 focus:outline-none focus:border-blue-500 mb-2 sm:mb-0"
+                          placeholder="Nome da Empresa"
+                          value={experience.company}
+                          onChange={e => handleChange(index, "company", e.target.value)}
+                        />
+                        <input
+                          className="bg-blue-50 text-blue-700 border-blue-200 w-fit rounded px-2 py-1 border focus:outline-none focus:border-blue-500"
+                          placeholder="Mês/Ano - Mês/Ano"
+                          value={experience.period}
+                          onChange={e => handleChange(index, "period", e.target.value)}
+                        />
                       </div>
-                      <h4 className="text-lg font-semibold text-blue-600 mb-3">{experience.position}</h4>
-                      <p className="text-gray-600 mb-4 leading-relaxed">{experience.description}</p>
-                      <div className="flex flex-wrap gap-2">
-                        {experience.technologies.map((tech) => (
-                          <Badge key={tech} variant="secondary" className="bg-gray-100 text-gray-700">
-                            {tech}
-                          </Badge>
+                      <input
+                        className="text-lg font-semibold text-blue-600 mb-3 bg-transparent border-b border-gray-300 focus:outline-none focus:border-blue-500 w-full"
+                        placeholder="Cargo/Função"
+                        value={experience.position}
+                        onChange={e => handleChange(index, "position", e.target.value)}
+                      />
+                      <textarea
+                        className="text-gray-600 mb-4 leading-relaxed bg-transparent border-b border-gray-300 focus:outline-none focus:border-blue-500 w-full resize-none"
+                        placeholder="Descrição das principais atividades e responsabilidades desenvolvidas no cargo."
+                        value={experience.description}
+                        onChange={e => handleChange(index, "description", e.target.value)}
+                      />
+                      <input
+                        className="bg-gray-100 text-gray-700 rounded px-2 py-1 border border-gray-200 focus:outline-none focus:border-blue-500 w-full mb-2"
+                        placeholder="Tecnologias (opcional, separadas por vírgula)"
+                        value={experience.technologies}
+                        onChange={e => handleChange(index, "technologies", e.target.value)}
+                      />
+                      <div className="flex flex-wrap gap-2 mb-2">
+                        {experience.technologies && experience.technologies.split(',').map((tech, i) => (
+                          tech.trim() && (
+                            <Badge key={i} variant="secondary" className="bg-gray-100 text-gray-700">
+                              {tech.trim()}
+                            </Badge>
+                          )
                         ))}
                       </div>
+                      <button
+                        type="button"
+                        className="text-red-500 hover:underline text-sm mt-2"
+                        onClick={() => removeExperience(index)}
+                        disabled={experiences.length === 1}
+                      >
+                        Remover experiência
+                      </button>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
           ))}
+        </div>
+        <div className="flex justify-center mt-8">
+          <button
+            type="button"
+            className="bg-blue-600 text-white px-6 py-2 rounded shadow hover:bg-blue-700 transition"
+            onClick={addExperience}
+          >
+            Adicionar experiência
+          </button>
         </div>
       </div>
       
